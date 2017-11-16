@@ -41,6 +41,14 @@ class AutoUpdaterController {
 
     handleUpdateAvailable(updateInfo) {
         log.info('Found update', updateInfo);
+
+        // If window not open, open it to notify user
+        this.openUpdaterWindow(this.mainWindow);
+        this.forceFocus();
+        this.setState({
+            hasUpdateAvailable: true,
+            updateInfo
+        });
     }
 
     handleUpdateNotAvailable () {

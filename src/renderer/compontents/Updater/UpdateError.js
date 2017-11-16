@@ -4,7 +4,7 @@ import { Button } from 'antd';
 import UpdaterStyles from './Updater.css';
 
 
-let latestReleaseUrl = 'https://github.com/appium/appium-desktop/releases/latest';
+let latestReleaseUrl = 'https://github.com/yanbeixiang/electron-updater-demo/releases/latest';
 
 export default class FoundUpdate extends Component {
 

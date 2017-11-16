@@ -25,7 +25,7 @@ export default class DownloadUpdate extends Component {
         {!updateDownloaded && <span>&nbsp;(transferred: {megaBytesTransferred || 0} / {megaBytesTotal || '-'} mb)</span>}
         {updateDownloaded && <span>Download Complete</span>}
         <Progress percent={!updateDownloaded ? percent : 100}></Progress>
-        {updateDownloaded && <p>Changes will take effect after you close appium. Please wait a few minutes after closing Appium for it to install the new version before re-opening.</p>}
+        {updateDownloaded && <p>Changes will take effect after you close app. Please wait a few minutes after closing Appium for it to install the new version before re-opening.</p>}
       </div>
       <footer>
         {updateDownloaded && <Button type='primary' onClick={() => ipcRenderer.send('update-quit-and-install')}>Click to Close Appium Now</Button>}

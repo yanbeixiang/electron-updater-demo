@@ -7,7 +7,7 @@ export default class CheckForUpdates extends Component {
 
   render () {
     const {isCheckingForUpdates, hasNoUpdateAvailable, unsupported} = this.props;
-    let latestReleaseUrl = 'https://github.com/appium/appium-desktop/releases/latest';
+    let latestReleaseUrl = 'https://github.com/yanbeixiang/electron-updater-demo/releases/latest';
 
     if (!isCheckingForUpdates && !hasNoUpdateAvailable && !unsupported) {
       return null;
@@ -15,7 +15,6 @@ export default class CheckForUpdates extends Component {
 
     return <div className={UpdaterStyles['check-for-updates-container']}>
       <div>
-        <img src={'images/appium_logo.png'} />
         <p>Version: {version}</p>
       </div>
       <footer>
