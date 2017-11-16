@@ -5,6 +5,7 @@
   "author": {
     "name": "zs"
   },
+  "homepage": "./",
   "main": "./src/main/main.js",
   "dependencies": {
     "antd": "^2.13.10",
