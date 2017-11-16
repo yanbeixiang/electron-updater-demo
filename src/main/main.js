@@ -1,6 +1,7 @@
 const { app, BrowserWindow, Menu } = require('electron');
 const { isDev, indexPage } = require('./config.default');
 const { getMenuTemplate } = require('./menu');
+const log = require('./logger');
 
 let mainWindow = null;
 const winDefaultOptions = {
@@ -31,6 +32,7 @@ function initialize() {
 function createMainWindow() {
     mainWindow = new BrowserWindow(winDefaultOptions);
 
+    log.info(`indexPage: ${indexPage}`);
     mainWindow.loadURL(indexPage);
 
     mainWindow.show();
@@ -39,9 +41,7 @@ function createMainWindow() {
         mainWindow = null;
     });
 
-    if (isDev) {
-        mainWindow.openDevTools();
-    }
+    mainWindow.openDevTools();
 }
 
 initialize();
