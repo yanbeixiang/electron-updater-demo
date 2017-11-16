@@ -1,5 +1,5 @@
 const { autoUpdater } = require('electron-updater');
-const log = require('electron-log');
+const log = require('./logger');
 const { ipcMain, BrowserWindow, Menu } = require('electron');
 const { version } = require('../../package.json');
 const { isDev, indexPage } = require('./config.default');
