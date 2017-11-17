@@ -61,7 +61,7 @@ class AutoUpdaterController {
     handleCheckingForUpdate () {
         log.info('Looking for updates');
         this.setState({
-            checkingForUpdate: true,
+            isCheckingForUpdates: true,
         });
     }
 
@@ -123,6 +123,7 @@ class AutoUpdaterController {
 
     //更新autoUpdater的状态，并将该状态发送到updater窗口
     setState (newState) {
+        log.info('newState', newState);
         this.state = newState;
         if (this.updaterWin) {
             this.updaterWin.send('update-state-change', this.state);
@@ -139,8 +140,8 @@ class AutoUpdaterController {
 
         // Create and open the Browser Window
         this.updaterWin = updaterWin = new BrowserWindow({
-            width: 600,
-            height: 400,
+            width: 500,
+            height: 300,
             title: "Update Available",
             backgroundColor: "#f2f2f2",
             webPreferences: {

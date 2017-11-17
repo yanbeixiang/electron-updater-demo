@@ -8,10 +8,11 @@ import UpdaterStyles from './Updater.css';
 
 export default class Updater extends Component {
   state = {
+      info: {}
   };
 
   setUpdateState = (updateState) => {
-    this.setState({ ...updateState });
+    this.setState({ info: { ...updateState } });
   };
 
   componentDidMount () {
@@ -25,11 +26,12 @@ export default class Updater extends Component {
   }
 
   render () {
+    console.log('this.state', this.state);
     return <div className={UpdaterStyles['updater-container']}>
-      <CheckForUpdates setUpdateState={this.setUpdateState} {...this.state} />
-      <FoundUpdate setUpdateState={this.setUpdateState} {...this.state} />
-      <DownloadUpdate setUpdateState={this.setUpdateState} {...this.state} />
-      <UpdateError setUpdateState={this.setUpdateState} {...this.state} />
+      <CheckForUpdates setUpdateState={this.setUpdateState} {...this.state.info} />
+      <FoundUpdate setUpdateState={this.setUpdateState} {...this.state.info} />
+      <DownloadUpdate setUpdateState={this.setUpdateState} {...this.state.info} />
+      <UpdateError setUpdateState={this.setUpdateState} {...this.state.info} />
     </div>;
   }
 }
